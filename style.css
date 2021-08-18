@@ -21,6 +21,17 @@
   perspective: 1300px; 
 }
 
+.viewport::after {
+  content: ''; 
+  position: absolute; 
+  width: 120%;
+  height: 20%; 
+  background-color: black;
+  top: 120%; 
+  left: -10%; 
+  filter: blur(40px);
+}
+
 .cube {
   width: 100%; 
   height: 7vh; /* 30% of wievport  height*/ 
@@ -28,6 +39,7 @@
   transform-style: preserve-3d;
   position: relative; 
   transform: rotateY(-90deg);
+  z-index: 5; 
 }
 
 .cube-2 {
@@ -130,4 +142,41 @@
   height: 42vw; 
   background-color: #111;
   transform: translateY(-21vh) rotateX(90deg);
+}
+
+.control {
+  position: absolute; 
+  z-index: 100; 
+  transform: translate(-50%, -50%);
+  width: 40px; 
+  height: 40px; 
+  border: 1px solid #fff; 
+  background-color: rgba(59,52,50,.9);
+  color: white; 
+  border-radius: 50%;
+  cursor: pointer; 
+  transition: background-color .3s;
+  
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.control:hover {
+  background-color: rgb(42,38,36,.8 );
+}
+
+.left-arrow {
+  top: 50%; 
+  left: -35%; 
+}
+
+.right-arrow {
+  top: 50%; 
+  left: 135%; 
+}
+
+.play-pause {
+  top: 140%; 
+  left: 120%; 
 }
