@@ -1,0 +1,73 @@
+*{
+  margin: 0; 
+  padding: 0; 
+}
+
+.container {
+  height: 100vh; 
+  width: 100%; 
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)), url(images/bg.jpg) no-repeat;
+  background-size: cover; 
+}
+
+.viewport {
+  width: 42vw; 
+  height: 21vh; 
+  /* background-color: #fff; */
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  perspective: 1300px; 
+}
+
+.cube {
+  width: 100%; 
+  height: 7vh; /* 30% of wievport  height*/ 
+  background-color: #ccc;
+  transform-style: preserve-3d;
+  position: relative; 
+  transform: rotateY(0deg);
+}
+
+.cube-2 {
+  z-index: 10;
+}
+
+.face {
+  width: 100%; 
+  height: 100%; 
+  background-color: red; 
+  position: absolute; 
+  /* opacity: .7;  */
+  font-size: 25px;
+  color: #fff; 
+}
+
+.front {
+  transform: translateZ(21vw);
+}
+
+.back {
+  transform: translateZ(-21vw) rotateY(180deg);
+}
+
+.left {
+  transform: translateX(-21vw) rotateY(-90deg);
+}
+
+.right {
+  transform: translateX(21vw) rotateY(90deg); 
+}
+
+.top {
+  transform: translateY(-21vw) rotateX(-90deg);
+  height: 42vw; 
+  background-color: #111;
+}
+
+.bottom {
+  height: 42vw; 
+  background-color: #111;
+  transform: translateY(-21vh) rotateX(90deg);
+}
