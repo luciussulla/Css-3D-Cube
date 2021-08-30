@@ -29,21 +29,30 @@
   background-color: black;
   top: 120%; 
   left: -10%; 
-  filter: blur(40px);
+  filter: blur(30px);
 }
 
 .cube {
   width: 100%; 
-  height: 7vh; /* 30% of wievport  height*/ 
-  /* background-color: #ccc; */
+  height: 33.33333%; /* 7vh; 30% of wievport  height
+  background-color: #ccc; */ 
   transform-style: preserve-3d;
   position: relative; 
-  transform: rotateY(-90deg);
   z-index: 5; 
+  /* transition: .4s transform linear;  */
+}
+
+.cube-1 {
+  transition: transform .4s .2s; 
 }
 
 .cube-2 {
   z-index: 10;
+  transition: transform .4s .4s; 
+}
+
+.cube-3 {
+  transition: transform .4s .6s; 
 }
 
 .face {
@@ -133,7 +142,7 @@
 }
 
 .top {
-  transform: translateY(-21vw) rotateX(-90deg);
+  transform: translateY(-21vw) rotateX(90deg);
   height: 42vw; 
   background-color: #111;
 }
@@ -141,7 +150,7 @@
 .bottom {
   height: 42vw; 
   background-color: #111;
-  transform: translateY(-21vh) rotateX(90deg);
+  transform: translateY(-14vh) rotateX(-90deg);
 }
 
 .control {
@@ -160,6 +169,10 @@
   display: flex; 
   justify-content: center;
   align-items: center;
+}
+
+.control i {
+  pointer-events: none;
 }
 
 .control:hover {
